@@ -1,0 +1,26 @@
+auto ens192  
+iface ens192 inet static  
+address 172.16.1.2/28    
+gateway 172.16.1.1  
+  
+auto ens224  
+iface ens224 inet static  
+address 192.168.100.1/27  
+  
+auto ens224:1  
+iface ens224:1 inet static  
+address 192.168.200.1/28    
+
+auto ens224.100  
+iface ens224.100 inet static  
+address 192.168.100.3/27    
+Vlan-raw-device ens224  
+  
+auto ens224.200  
+iface ens224.200 inet static  
+address 192.168.200.3/28    
+Vlan-raw-device ens224:1
+
+auto ens224.99
+iface ens224.99 inet static
+address 192.168.99.9/29
